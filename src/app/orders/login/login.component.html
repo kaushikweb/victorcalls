@@ -1,0 +1,123 @@
+<div class="container-scroller">
+    <div class="my-container">
+        <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+    </div>
+  <div class="page-body-wrapper full-page-wrapper">
+    <div class="content-wrapper d-flex align-items-center auth  theme-one">
+      <div class="row w-100 mx-auto">
+        <div class="col-lg-4 mx-auto">
+         <div class="auto-form-wrapper">
+           <form role="form" [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+              <div class="form-group">
+                <label class="label" style="color: #fff;">Username</label>
+                <div class="input-group">
+                  <input type="text" placeholder="Username" class="form-control" 
+                  formControlName="userName" required=""  (keyup)="checkUsername($event)"
+                  style="border-left: 5px solid #f3971f;">
+                </div>
+                <span *ngIf="bUserName" style="color:#fff;">Enter user name</span>
+              </div>
+              <div class="form-group">
+                <label class="label" style="color: #fff;">Password</label>
+                <div class="input-group">
+                  <input type="password" placeholder="Password" formControlName="password"
+                  class="form-control" (keyup)="checkPassword($event)" 
+                  style="border-left: 5px solid #f3971f;">
+                </div>
+                <span *ngIf="bPassword" style="color:#fff;">Enter Password</span>
+              </div>
+              <div class="form-group">
+                <button  type="submit" [disabled]="!loginForm.valid" class="btn btn-primary 
+                submit-btn btn-block" >Login</button>
+              </div>
+            </form>
+            </div>
+            <div style="margin-top: 20px;">
+                <p style="color:#fff;"  class="footer-text text-center"> © 2018 VictorCalls. 
+                  | Developed By : <a href="http://www.brandsbrother.com" target="_blank" style="color:#fff;"> Brandsbrother</a></p>
+                </div>
+          </div>
+        </div>
+      </div>
+   </div>
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="container" >
+    <div class="row">
+     <div class="col-md-4">
+       <div class="login-auth">
+
+      <form role="form" [formGroup]="loginForm" (ngSubmit)="submit(loginForm.value)">
+        <div class="form-group">
+          <label class="label">Username</label>
+          <div class="input-group">
+            <input type="text" placeholder="Username" class="form-control" 
+            formControlName="userName" required="" (keyup)="checkUsername($event)">
+          </div>
+          
+        </div>
+        <div class="form-group">
+          <label class="label">Password</label>
+          <div class="input-group">
+            <input type="password" placeholder="Password" formControlName="password"
+            class="form-control" (keyup)="checkPassword($event)">
+          </div>
+          
+        </div>
+        <div class="form-group">
+          <button  type="submit" [disabled]="!loginForm.valid" class="btn btn-primary submit-btn btn-block">Login</button>
+        </div>
+        <div class="form-group d-flex justify-content-between">
+         
+          <a  class="text-small forgot-password text-black">Forgot Password</a>
+        </div>
+        
+      </form>
+    </div>
+  </div>
+  </div>
+</div>-->

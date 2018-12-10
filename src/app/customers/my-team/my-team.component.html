@@ -1,0 +1,28 @@
+<!-- partial -->
+<div class="main-panel">
+  <div class="my-container">
+      <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+  </div>
+      <div class="content-wrapper">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+            <h4 class="card-title" style="color:#131e42;text-align: center">My Team Locations : &nbsp;{{len}}</h4>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                  <agm-map [latitude]="lat" [longitude]="lon"
+                      style="width: 100%;height: 450px;" *ngIf="teamLocations">
+                   <agm-marker style="width: 100%;height: 450px;"
+                     *ngFor="let data of teamLocations; let i = index"
+                      [latitude]="data.lattitude" [longitude]="data.longitude">
+                    </agm-marker>  
+                   </agm-map>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- content-wrapper ends -->
+      
+    </div>

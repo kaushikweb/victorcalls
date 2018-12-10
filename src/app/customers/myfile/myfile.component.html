@@ -1,0 +1,41 @@
+<!-- partial -->
+<div class="main-panel" >
+    <div class="my-container">
+        <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+    </div>
+    <div class="content-wrapper">
+      <div class="card">
+       <div class="card-body">
+          <h4 class="card-title"> Upload Excel File of Leads</h4>
+          <div class="row">
+            <div class="col-12 ">
+                    <ng-container>
+                        <input type="file" id="file" multiple name="file"
+                          (change)="getFileDetails($event)">
+                        <button (click)="uploadExcelFiles()" class="btn btn-primary" 
+                          [disabled]="btnDisabled" style="margin-left:20px;">Upload Excel</button>
+                    </ng-container>
+                   <!-- &nbsp;&nbsp; <a (click)="downloadFile()" download="new_file" 
+                   class="btn btn-success">Download</a> -->
+                    <div>
+                      
+                    <button (click)="cancel()" class="btn btn-danger">Cancel</button>
+                </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- content-wrapper ends -->
+    
+  </div>
+  
+
+
+
+
+
+
+
+

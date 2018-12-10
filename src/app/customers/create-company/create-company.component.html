@@ -1,0 +1,112 @@
+<div class="main-panel" >
+  <!-- <ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#f7964f"
+  type="ball-scale-multiple">
+ <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner> -->
+  <div class="content-wrapper">
+    <div class="card">
+     <div class="card-body">
+        <h4 class="card-title" style="color: #fb4b1a;text-align: center">Create Company</h4>
+        <div class="row">
+              <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 ">
+                      <form role="form" [formGroup]="createCompanyForm" 
+                      (ngSubmit)="createCompany(createCompanyForm.value)">
+                      <div class="form-group">
+                          <label>Company Name</label>
+                          <input type="text"  formControlName="companyName" required=""
+                          [(ngModel)]="company.companyname" class="form-control" 
+                          (change) ="validateCompanyName()" placeholder="Enter Company Name">
+                           <label *ngIf="companyNameB">Wrong Company Name</label>
+                      </div>
+                      <div class="form-group">
+                          <label>Email-Id</label>
+                          <input type="text" formControlName="email" required=""
+                          [(ngModel)]="company.email" class="form-control" 
+                          (change) ="validateEmail()" placeholder="Enter Email-ID">
+                           <label *ngIf="emailB">Please enter valid email</label>
+                          </div>
+                      <div class="form-group">
+                          <label>Phone</label>
+                          <input type="text" formControlName="phone" required="" 
+                          class="form-control"(change) ="validatePhone()" 
+                          [(ngModel)]="company.phone" placeholder="Enter Phone number">
+                          <label *ngIf="phoneB">Enter 10 degit mobile number</label>
+                          <label *ngIf="phoneB0">First digit must not be zero</label>
+                      </div>
+                      <div class="form-group">
+                          <label>Contact Person</label>
+                          <input type="text" formControlName="contactPersonName" required="" 
+                           class="form-control" (change) = "validateCpName()" 
+                           [(ngModel)]="company.contactpersonname" placeholder="Enter Contact Person Name">
+                          <label *ngIf="cpB">Please enter valid name,only a-z character minimum length 2 and max length 30 </label>
+                      </div>
+                      <div class="form-group">
+                          <label>Contact Email-Id</label>
+                          <input type="text" formControlName="contactEmail" required="" 
+                           class="form-control" [(ngModel)]="company.contactemail"
+                          (change) ="validateEmailC()" placeholder="Enter COntact Email-Id">
+                          <label *ngIf="emailC">Please enter valid email</label>
+                      </div>
+                      <div class="form-group">
+                          <label>Country</label>
+                          <select type="text"  formControlName="country" required="" 
+                           class="form-control" [(ngModel)]="company.country">
+                           <option>Select Country</option>
+                          <option *ngFor="let country of countryList">{{country}}</option>
+                          </select>
+                      </div>
+                      <div class="form-group">
+                          <label>State</label>
+                          <input type="text" formControlName="state" required="" 
+                           class="form-control" (change)="validateState()" [(ngModel)]="company.state"
+                           placeholder="Enter State">
+                          <label *ngIf="stateB">Alphabate, space and . only 2 to 50 character long</label>
+                      </div>
+                      <div class="form-group">
+                          <label>City</label>
+                          <input type="text" formControlName="city" required=""
+                            class="form-control" (change)="validateCity()" [(ngModel)]="company.city"
+                            placeholder="Enter City">
+                           <label *ngIf="cityB">Alphabate, space and . only 2 to 50 character long</label>
+                      </div>
+                      <div class="form-group"> 
+                          <label>Company Address</label>
+                          <textarea class="form-control" formControlName="companyAddress" required="" 
+                           row="7" (change)="validateAddress()" [(ngModel)]="company.companyaddress"
+                           placeholder="Enter Company Address"></textarea>
+                          <label *ngIf="addressB">Alphabate, space and .,-,_,@,& and only 2 to 50 character long</label>
+                      </div>
+                      <div class="form-group">
+                          <label>Contact Phone</label>
+                          <input type="text" formControlName="contactPhone" required="" 
+                           class="form-control" (change) ="validatePhoneC()" 
+                           [(ngModel)]="company.contactPhone" placeholder="Enter Conatct Phone Number">
+                          <label *ngIf="phoneCB">Enter 10 degit mobile number</label>
+                          <label *ngIf="phoneCB0">First digit must not be zero</label>
+                      </div>
+                      <div class="form-group">
+                          <label>Activaction</label>
+                          <input type="checkbox" formControlName="activation" required="" 
+                            name="isActivated" [(ngModel)]="isActivate" (change)="activateCompany()">
+                      </div>
+                    
+                  
+                  
+                     <button type="submit" [disabled]="!createCompanyForm.valid" class="btn btn-primary">Save</button>
+                     <button class="btn btn-danger" (click)="cancelCompany()" style="margin-left: 10px;">Cancel</button>
+                      </form>
+                  
+                  
+                  
+                  </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- content-wrapper ends -->
+  
+</div>

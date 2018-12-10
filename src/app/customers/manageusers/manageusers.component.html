@@ -1,0 +1,62 @@
+<!-- partial -->
+<div class="main-panel">
+  <div class="my-container">
+      <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+    </div>
+  <div class="content-wrapper">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-2" >
+        <h4 class="card-title" style="color:#131e42">Manage Users</h4></div>
+        <div class="col-md-1">
+        <button (click)="createUser()" type="button" class="btn btn-success block">
+            Create User</button></div>
+          </div>
+        <div class="row">
+          <div class="col-12 table-responsive">
+            <table id="mydatatable" class="table table-striped">
+              <thead style="background: #87ceeb">
+                  <tr >
+                      <th >UserName</th>
+                      <th >First Name</th>
+                      <th >Role</th>
+                      <th >Company Id</th>
+                      <th >Email-ID</th> 
+                      <th >Manage User</th>
+                     
+                      </tr>
+              </thead>
+              <tbody *ngIf="users">
+                  <tr *ngFor="let myList of users; let i = index" [attr.data-index]="i" >
+                      <td ><a (click)="showUser(myList)" style="background: transparent;cursor: pointer;"
+                         data-toggle="modal" data-target="#myModal2">
+                        {{myList.userName}}</a></td>
+                       <td >{{myList.firstName}}</td>
+                       <td >{{myList.role.name}}</td>
+                       <td >{{myList.companyId}}</td>
+                       <td >{{myList.email}}</td>
+                       <td >
+                        <button (click)="updateUser(i)" type="button" 
+                        class="btn btn-primary block" >
+                          Update</button>
+                          
+                        <button (click)="deleteUser(myList)" type="button" class="btn btn-danger block"
+                         data-toggle="modal" data-target="#myModal" [disabled]="true">
+                         Delete</button>
+                         
+                       </td>
+                   
+                     </tr>
+              </tbody>
+            </table>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- content-wrapper ends -->
+  
+</div>
+

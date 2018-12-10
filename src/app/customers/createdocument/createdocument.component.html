@@ -1,0 +1,55 @@
+<!-- partial -->
+<div class="main-panel" >
+    <div class="my-container">
+        <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+      </div>
+  <div class="content-wrapper">
+    <div class="card">
+     <div class="card-body">
+        <h4 class="card-title"> Add Document to ProjectId</h4>
+        <div class="row">
+          <!-- <div class="col-md-4" style="margin:6px;">
+              <input type="text" class="form-control" (change)="validateText()" 
+              placeholder="Document Name" >
+          </div>
+           -->
+          <div class="col-12 ">
+           
+                  <ng-container>
+                      <input type="file" id="file" multiple name="file"
+                        (change)="getFileDetails($event)">
+                      <button (click)="uploadFiles()" class="btn btn-primary" [disabled]="btnDisabled"
+                        style="margin-left:20px;">Upload File</button>
+                        
+                  </ng-container>
+                  <div>
+                  <button (click)="cancel()" class="btn btn-danger">Cancel</button>
+              </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- content-wrapper ends -->
+  
+</div>
+
+<!-- <form class="md-form">
+    <div class="file-field">
+        <div class="btn btn-primary btn-sm float-left">
+            <span>Choose file</span>
+            <input type="file">
+        </div>
+        <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="Upload your file">
+        </div>
+    </div>
+</form> -->
+
+
+
+
+
+
+

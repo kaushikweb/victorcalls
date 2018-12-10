@@ -1,0 +1,62 @@
+<div class="main-panel" >
+    <div class="my-container">
+        <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+    </div>
+    <div class="content-wrapper">
+      <div class="card">
+       <div class="card-body">
+         <div class="row">
+           <div class="col-md-3">
+          <h4 class="card-title" style="color:#131e42" *ngIf="leadsCount">
+            Visit Dead : {{leadsCount.visitDeadCount}}</h4></div>
+            <div class="col-md-3">
+                <!-- <button [disabled] = "!chekedLead" (click)="openModelWindow(template)"
+                 type="button" [hidden]="true"
+                class="btn btn-success block" >Assign Lead</button> -->
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-12 table-responsive">
+              <div id="tableSelectedLeads" *ngIf="selectedLead">
+               <table id="mydatatable" class="table table-striped">
+                <thead style="background: #87ceeb">
+                  <tr>
+                    <th></th>
+                    <th>Lead Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th> 
+                    <th>Lead Source</th>
+                   <!-- <th>Assigned To User</th>-->
+                   <th>Remarks</th>
+                    </tr>
+                    
+                </thead>
+                <tbody>
+                  <tr *ngFor="let myList of myLead; let i = index" [attr.data-index]="i" >
+                    <th><input type="checkbox" id="1"
+                     [ngModel]="filter" (ngModelChange)="onRowSelect($event, i)">
+                    </th>
+                  <td>{{myList.leadid}}</td>
+                  <td>{{myList.name}} </td>
+                  <td>{{myList.email}}</td>
+                  <td>{{myList.phonenumber}}</td>
+                  <td>{{myList.leadSource}}</td>
+                  <td>{{myList.cmpctlabel}}</td>
+                  <!--<td >{{myList.cmpctLabel}}</td>-->
+                  
+             
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- content-wrapper ends -->
+    
+  </div>
+  

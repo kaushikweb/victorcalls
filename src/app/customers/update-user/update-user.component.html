@@ -1,0 +1,83 @@
+<!-- partial -->
+<div class="main-panel" >
+  <div class="content-wrapper">
+    <div class="card">
+       
+     <div class="card-body">
+       <h5 class="card-title" *ngIf="updatedUser">Update User with id={{updatedUser.id}}&nbsp;
+          and User Name:{{updatedUser.username}}</h5>
+        
+        <div class="row">
+            <div class="col-md-6" *ngIf="updatedUser">
+                <form class="form-horizontal" (ngSubmit)="updateUser()">
+                   
+                  <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="text" name="phoneNumber" class="form-control"
+                    [(ngModel)]="updatedUser.phonenumber" >
+                </div>
+               <div class="form-group">
+                   <label>User Name</label>
+                   <input type="text" name="userName" class="form-control"
+                  [(ngModel)]="updatedUser.username" >
+              </div>
+              <div class="form-group">
+                 <label>Password</label>
+                     <input type="password" name="password" class="form-control"
+                    [(ngModel)]="updatedUser.passwordhash" >
+                </div>
+                <div class="form-group">
+                  <label>Confirm Password</label>
+                   <input type="password" name="cPassword" class="form-control"
+                   (keyup)="confirmPassword($event)">
+                  <span style="float:right" *ngIf="cpy">
+                  <i class="fa fa-check-circle-o" aria-hidden="true" style="color: rgb(9, 238, 9)"></i></span>
+                  <span style="float:right" *ngIf="!cpy">
+                  <i class="fa fa-window-close" aria-hidden="true" style="color: red"></i></span>
+                 </div>
+                 
+                  <div class="form-group">
+                    <label>Email</label>
+                      <input type="text" name="email" class="form-control" 
+                       [(ngModel)]="updatedUser.email" >
+                </div>
+                <div class="form-group">
+                  <label>First Name</label>
+                   <input type="text" name="firstName" class="form-control"
+                  [(ngModel)]="updatedUser.firstname" >
+              </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" name="lastName" class="form-control"
+              [(ngModel)]="updatedUser.lastname" >
+            </div>
+            <div class="form-group">
+              <label>Role Name</label>
+              <select name="roleName" class="form-control" [(ngModel)]="selectedRole"
+               (change)="selectRole()"  *ngIf="roles">
+               <option>Select Roles</option>
+              <option *ngFor="let role of roles">{{role.name}}</option>
+            </select>
+            </div>
+            <div class="form-group">
+              <label>Project Name</label>
+              <select name="projectName" class="form-control" [(ngModel)]="selectedProject"
+              (change)="selectProject()"  *ngIf="projects">
+              <option>Select Project</option>
+             <option *ngFor="let project of projects">{{project.name}}</option>
+            </select>
+            </div>
+             <button type="submit" class="btn btn-success btn-icon" style="margin-left: 10px;">
+                      Update</button>
+              <button (click)="cancelUpdate()" class="btn btn-danger btn-icon" style="margin-left: 10px;">
+              Cancel</button>
+              </form>
+            </div> 
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- content-wrapper ends -->
+  
+</div>

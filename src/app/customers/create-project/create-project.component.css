@@ -1,0 +1,20 @@
+agm-map {
+    margin-top: 150px;
+    
+      height: 300px;
+    }
+    .main-panel{
+      margin-left: 20%;
+     }
+  
+  
+   @media only screen and (max-width: 768px) {
+      .main-panel{
+          margin-left: 0px;
+          width: 100%;
+         }  
+      .table-responsive{
+          width: 100%;
+      }
+  }
+  

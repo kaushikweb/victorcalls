@@ -1,0 +1,87 @@
+
+<div  class="w3-sidebar w3-bar-block w3-border-right" style="
+color:#131e42;width:273px;box-shadow: 1px 1px 1px 1px #555555;" id="mySidebar">
+
+  <button (click)="w3_close()" class="w3-bar-item w3-large" 
+    style="background:#00Bfff;color:#131e42; box-shadow: 2px 2px 2px 2px #555555;">
+    <img src="assets/icon/vc-logo.svg" style="margin-top: 5px;">
+     <img src="assets/close.png" style="height:20px;margin-left:180px;
+        border-radius:25px;margin-top:4px"> </button>
+  
+   
+  
+      <a class="w3-bar-item w3-button" (click)="dashBoard()"> 
+        <img src="assets/icon/Home.png" style="height: 20px;">&nbsp; Dashboard ({{role_name}}) </a>
+      <a class="w3-bar-item w3-button" routerLink="projects"> 
+          <img src="assets/icon/projects.png" style="height: 20px;">&nbsp; Projects</a>
+      <a class="w3-bar-item w3-button" routerLink="users">
+        <img src="assets/icon/User.png" style="height: 20px;">&nbsp; Users</a>
+      <a class="w3-bar-item w3-button" *ngIf="showCompany" routerLink="cmp">
+          <img src="assets/icon/Companies.png" style="height: 20px;">&nbsp; Companies</a>
+      <a class="w3-bar-item w3-button" *ngIf="false" routerLink="integ">
+          <img src="assets/icon/Integration.png" style="height: 20px;"> &nbsp; Integration</a>
+      <a class="w3-bar-item w3-button" *ngIf="false" routerLink="leads"> &nbsp; Leads</a>
+      <a routerLink="upload" class="w3-bar-item w3-button">
+        <img src="assets/icon/Upload-icon-VC.png" > Upload Leads </a>
+      
+  <div>
+    <button (click)="showHide()" class="w3-bar-item w3-button"><img src="assets/icon/Leads.png" 
+      style="height: 20px;">  &nbsp;CRM <img src="assets/icon/dropdown.png" style="height:15px;">  </button>
+    <div *ngIf="show">
+    <div *ngIf="leadsCount">
+      
+      <a routerLink="raw" class="w3-bar-item w3-button">Raw Leads: {{leadsCount.rawLeadsCount}}</a>
+      <a routerLink="current" class="w3-bar-item w3-button">Current Leads:{{leadsCount.currentLeadsCount}} </a>
+      <a routerLink="follow" class="w3-bar-item w3-button">Follow Up: {{leadsCount.followUpsCount}}</a>
+      <a routerLink="already" class="w3-bar-item w3-button">Already : {{leadsCount.alreadyBookedCount }}</a>
+      <a routerLink="booked" class="w3-bar-item w3-button">Booked : {{leadsCount.bookedDone}}</a>
+      <a routerLink="dead" class="w3-bar-item w3-button"> Dead : {{leadsCount.deadCount}}</a>
+      <a routerLink="nowork" class="w3-bar-item w3-button"> Nowork : {{leadsCount.noWorkCount}}</a>
+      <a routerLink="resale" class="w3-bar-item w3-button"> Resale : {{leadsCount.resaleCount}}</a>
+      <a routerLink="duplicate" class="w3-bar-item w3-button">Duplicate: {{leadsCount.duplicateCount}}</a>
+      <a routerLink="notconnected" class="w3-bar-item w3-button">Not Connected: {{leadsCount.notConnectedCount}}</a>
+      <a routerLink="visitdone" class="w3-bar-item w3-button">Visit Done: {{leadsCount.visitDoneCount }}</a>
+      <a routerLink="visiton" class="w3-bar-item w3-button">Visit On: {{leadsCount.visitOnCounts}}</a>
+      <a routerLink="visitdead" class="w3-bar-item w3-button">Visit Dead: {{leadsCount.visitDeadCount}}</a>
+      <a routerLink="rent" class="w3-bar-item w3-button">Rent : {{leadsCount.rentCount}}</a>
+      <a routerLink="plot" class="w3-bar-item w3-button">Plot: {{leadsCount.plotCount }}</a>
+      
+  </div>
+</div>
+</div>  
+<a class="w3-bar-item w3-button" routerLink="reports"> <img src="assets/icon/Upload-icon-VC.png" > Reporting</a>
+<a class="w3-bar-item w3-button" routerLink="myteam"> <img src="assets/icon/Team-Location.png"> 
+  Team Location</a>
+  <a class="w3-bar-item w3-button" (click)="logOut()" routerLink="myteam"> <img src="assets/icon/Logout.png"> 
+    Logout</a>
+<div style="margin-bottom: 20px;"></div>
+</div>
+
+
+<div class="w3-teal " >
+  <!-- <div class="my-container">
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+  </div> -->
+  <div class="w3-container " style="background:#00Bfff;color:#131e42;
+       box-shadow: 2px 2px 2px 2px #cccccc;">
+       
+      <button class="w3-button w3-teal w3-xlarge myhoverclass" (click)="w3_open()">☰</button>
+      <img src="assets/icon/vc-logo.svg" style="height: 50px;margin-left: 8px;">
+              
+    
+   <div style="float:right"> 
+     <h5 style="float:left; margin-right:8px;margin-top:10px;font-size: 15px;">
+      <h5  style="float: left; font-size: 15px;"> <img src="assets/icon/User.png" style="height:20px;">
+        {{user_name}} | {{loginCompanyName}} |
+      </h5>
+      <h5 style="float: left; margin-right:8px;font-size: 15px;">
+        
+        <a (click)="logOut()" ><span style="color:#131e42;"> <img src="assets/icon/Logout.png" style="height:20px;margin-top:-4px;"> Sign Out</span></a>
+        </h5>
+      </h5>
+      
+    
+  </div>
+  </div>
+</div>
+

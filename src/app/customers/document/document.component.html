@@ -1,0 +1,48 @@
+<!-- partial -->
+<div class="main-panel" >
+        <div class="my-container">
+                <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+              </div>
+  <div class="content-wrapper">
+    <div class="card">
+     <div class="card-body">
+        <div class="row">
+            <div class="col-md-3 col-sm-10 col-xs-12">
+        <h4 class="card-title">Manage Document : &nbsp;{{numberOfRecord}}&nbsp;Records</h4>
+      </div>
+          <div class="col-md-3 col-sm-10 col-xs-12" >
+              <button class="btn btn-success btn-icon" style="margin-left: 10px;background: #87ceeb;
+              color: #131e42;font-weight: bold;" (click)="showForm()" *ngIf="!form1">
+               Add Document</button>
+              
+           </div>
+</div>
+        <div class="row">
+            <div class="col-12 table-responsive">
+                <table id="mydatatable" class="table table-striped">
+                  <thead style="background: #87ceeb">
+                      <tr>
+                          <th>Document ID</th>
+                          <th>Project ID</th>
+                          <th>Document Name</th>
+                          <th>Link</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let myList of documents; let i = index" [attr.data-index]="i" >
+                          <td >{{myList.documentID}}</td>
+                          <td>{{myList.projectID}}</td>
+                          <td>{{myList.name}}</td>
+                          <td>{{myList.link}}</td>
+                        </tr>
+                  </tbody>
+                </table>
+              </div>  
+              
+              
+      </div>
+    </div>
+  </div>
+  <!-- content-wrapper ends -->
+  
+</div>

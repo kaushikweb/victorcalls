@@ -1,0 +1,66 @@
+.main-panel{
+    margin-left: 20%;
+   }
+   .table-responsive{
+    margin: 10px;
+}
+   .btn-success{
+    
+    border-radius: 25px;
+    background: #87ceeb;
+    font-size: 12px;
+    box-shadow: 2px 2px 2px 2px #cccccc;
+    -webkit-box-shadow: 2px 2px 2px 2px #cccccc;
+    -moz-box-shadow: 2px 2px 2px 2px #cccccc;
+    font-weight: bold;
+    border: 1px solid #87ceeb;
+    color: #131e42;
+   }
+   .btn-success:hover{
+    background: #ffffff;
+    border: 1px solid #87ceeb;
+    color: #000000;    
+   }
+.btn-primary{
+    width:50%;
+    border-radius: 25px;
+    background: #87ceeb;
+    font-size: 12px;
+    box-shadow: 2px 2px 2px 2px #cccccc;
+    -webkit-box-shadow: 2px 2px 2px 2px #cccccc;
+    -moz-box-shadow: 2px 2px 2px 2px #cccccc;
+    font-weight: bold;
+    color: #131e42;
+   
+ }
+ .btn-primary:hover{
+    background: #ffffff;
+    border: 1px solid #87ceeb;
+    color: #000000;
+ }
+ .btn-danger{
+    width:50%;
+    border-radius: 25px;
+    font-size: 12px;
+    background: #87ceeb;
+    box-shadow: 2px 2px 2px 2px #cccccc;
+    -webkit-box-shadow: 2px 2px 2px 2px #cccccc;
+    -moz-box-shadow: 2px 2px 2px 2px #cccccc;
+    font-weight: bold;
+    color: #131e42;
+ }
+ .btn-danger:hover{
+    background: #ffffff;
+    border: 1px solid #87ceeb;
+    color: #000000;
+ }
+   
+   @media only screen and (max-width: 768px) {
+       .main-panel{
+           margin-left: 0px;
+           width: 100%;
+          }  
+       .table-responsive{
+           width: 100%;
+       }
+   }

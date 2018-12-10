@@ -1,0 +1,288 @@
+<div class="main-panel">
+  <div class="my-container">
+      <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+  </div>
+  
+  <div class="content-wrapper" *ngIf="leadsCount">
+    <div class="row mb-4">
+      <div class="col-12 d-flex align-items-center justify-content-between">
+        <h4 class="page-title">Dashboard</h4>
+        <div class="d-flex align-items-center">
+          <div class="wrapper mr-4 d-none d-sm-block">
+            <p class="mb-0">Summary for
+              <b class="mb-0">{{todayDate | date}}</b>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 card-statistics">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+            <div class="card">
+             <div class="card-body">
+                <div class="d-flex justify-content-between pb-2" >
+                  <h5><a (click)="navigateLead('home/raw')">Raw Leads </a></h5>
+                  <i class="icon-docs"></i>
+                </div>
+                <div class="d-flex justify-content-between" style="color:#131e42;">
+                  <p>Count</p>
+                  <p>{{leadsCount.rawLeadsCount}} </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between pb-2">
+                  <h5><a (click)="navigateLead('home/current')">Current Leads</a></h5>
+                  <i class="icon-pie-chart"></i>
+                </div>
+                <div class="d-flex justify-content-between" style="color:#131e42;">
+                  <p>Count</p>
+                  <p> {{leadsCount.currentLeadsCount}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+            <div class="card" >
+              <div class="card-body">
+                <div class="d-flex justify-content-between pb-2">
+                  <h5><a (click)="navigateLead('home/nowork')">No Work</a></h5>
+                  <i class="icon-wallet"></i>
+                </div>
+                <div class="d-flex justify-content-between" style="color:#131e42;">
+                  <p>Count</p>
+                  <p> {{leadsCount.noWorkCount}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+            <div class="card" >
+              <div class="card-body">
+                <div class="d-flex justify-content-between pb-2">
+                  <h5><a (click)="navigateLead('home/notconnected')">Not Connected</a></h5>
+                  <i class="icon-screen-desktop"></i>
+                </div>
+                <div class="d-flex justify-content-between" style="color:#131e42;">
+                  <p>Count</p>
+                  <p> {{leadsCount.notConnectedCount}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-12 card-statistics">
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between pb-2">
+                    <h5><a (click)="navigateLead('home/follow')">Follow up</a></h5>
+                    <i class="icon-docs"></i>
+                  </div>
+                  <div class="d-flex justify-content-between" style="color:#131e42;">
+                    <p>Count</p>
+                    <p> {{leadsCount.followUpsCount}}</p>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between pb-2">
+                    <h5><a (click)="navigateLead('home/visiton')">Visit On</a></h5>
+                    <i class="icon-pie-chart"></i>
+                  </div>
+                  <div class="d-flex justify-content-between" style="color:#131e42;">
+                    <p>Count</p>
+                    <p> {{leadsCount.visitOnCounts}}</p>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between pb-2">
+                    <h5><a (click)="navigateLead('home/visitdone')">Visit Done</a></h5>
+                    <i class="icon-wallet"></i>
+                  </div>
+                  <div class="d-flex justify-content-between" style="color:#131e42;">
+                    <p>Count</p>
+                    <p> {{leadsCount.visitDoneCount}}</p>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between pb-2">
+                    <h5><a (click)="navigateLead('home/visitdead')">Visit Dead</a></h5>
+                    <i class="icon-screen-desktop"></i>
+                  </div>
+                  <div class="d-flex justify-content-between" style="color:#131e42;">
+                    <p>Count</p>
+                    <p> {{leadsCount.visitDeadCount}}</p>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-12 card-statistics">
+            <div class="row">
+              <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between pb-2">
+                      <h5><a (click)="navigateLead('home/otherproject')">Other Projects</a></h5>
+                      <i class="icon-docs"></i>
+                    </div>
+                    <div class="d-flex justify-content-between" style="color:#131e42;">
+                      <p>Count</p>
+                      <p> {{leadsCount.otherProjectsCount}}</p>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between pb-2">
+                      <h5><a (click)="navigateLead('home/resale')">Resale Count</a></h5>
+                      <i class="icon-pie-chart"></i>
+                    </div>
+                    <div class="d-flex justify-content-between" style="color:#131e42;">
+                      <p>Count</p>
+                      <p> {{leadsCount.resaleCount}}</p>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between pb-2">
+                      <h5><a (click)="navigateLead('home/already')">Already Booked</a></h5>
+                      <i class="icon-wallet"></i>
+                    </div>
+                    <div class="d-flex justify-content-between" style="color:#131e42;">
+                      <p>Count</p>
+                      <p> {{leadsCount.alreadyBookedCount}}</p>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between pb-2">
+                      <h5><a (click)="navigateLead('home/booked')">Booking Done</a></h5>
+                      <i class="icon-screen-desktop"></i>
+                    </div>
+                    <div class="d-flex justify-content-between" style="color:#131e42;">
+                      <p>Count</p>
+                      <p> {{leadsCount.bookedDone}}</p>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-12 card-statistics">
+              <div class="row">
+                <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between pb-2">
+                        <h5><a (click)="navigateLead('home/dead')">Dead Count</a></h5>
+                        <i class="icon-docs"></i>
+                      </div>
+                      <div class="d-flex justify-content-between" style="color:#131e42;">
+                        <p>Count</p>
+                        <p> {{leadsCount.deadCount}}</p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between pb-2">
+                        <h5><a (click)="navigateLead('home/rent')">Rent Count</a></h5>
+                        <i class="icon-pie-chart"></i>
+                      </div>
+                      <div class="d-flex justify-content-between" style="color:#131e42">
+                        <p>Count</p>
+                        <p> {{leadsCount.rentCount}}</p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between pb-2">
+                        <h5><a (click)="navigateLead('home/plot')">Plot Count</a></h5>
+                        <i class="icon-wallet"></i>
+                      </div>
+                      <div class="d-flex justify-content-between" style="color:#131e42">
+                        <p>Count</p>
+                        <p> {{leadsCount.plotCount}}</p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 grid-margin stretch-card card-tile">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between pb-2">
+                        <h5><a (click)="navigateLead('home/duplicate')">Duplicate</a></h5>
+                        <i class="icon-screen-desktop"></i>
+                      </div>
+                      <div class="d-flex justify-content-between" style="color:#131e42;">
+                        <p>Count</p>
+                        <p> {{leadsCount.duplicateCount}}</p>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+   
+    
+    
+  </div>
+
+</div>
+<!-- main-panel ends -->
+
+
+

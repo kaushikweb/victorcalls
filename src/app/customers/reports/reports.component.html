@@ -1,0 +1,44 @@
+<div class="main-panel" >
+  <!-- <div class="my-container">
+      <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+  </div> -->
+  <div class="content-wrapper">
+     <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-10">
+            <h4 class="card-title" style="color:#131e42">Reporting</h4>
+          </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Select Date</label>
+                <input type="text" class="form-control" 
+                  placeholder="DD/MM/YYYY"  [(ngModel)]="selectedDate"
+                  (change)="selectDate()" required="">
+                  <label>Ex: plz Enter (DD/MM/YYYY)</label>
+              </div>
+              <div class="form-group" *ngIf="projects">
+                  <label>Project</label>
+                  <select class="form-control" required=""
+                  [(ngModel)]="selectedProject" (change)="selectProject()">
+                    <option>Select Project</option>
+                    <option *ngFor="let project of projects">{{project.projectName}}</option>
+                  </select>
+                </div>
+                <div class="form-group" *ngIf="users">
+                    <label>User</label>
+                    <select class="form-control" required="" name=""
+                    [(ngModel)]="selectedUser" (change)="selectUser()">
+                      <option>User List</option>
+                      <option *ngFor="let user of users">{{user.userName}}</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                      <button (click)="createExcel()" class="btn btn-primary" >Download File</button>
+                </div>
+              </div> 
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

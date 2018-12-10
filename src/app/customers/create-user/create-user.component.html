@@ -1,0 +1,97 @@
+<div class="main-panel" >
+  <!-- <ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#f7964f"
+  type="ball-scale-multiple">
+ <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner> -->
+  <div class="content-wrapper">
+    <div class="card">
+     <div class="card-body">
+        <h4 class="card-title" style="color: #fb4b1a;">Create User</h4>
+        <div class="row">
+            <div class="col-md-6"> 
+                <form role="form" [formGroup]="createuserForm"
+                (ngSubmit)="createUser(createuserForm.value)">
+                    
+                  <div class="form-group">
+                    <label>Phone Number</label>
+                     <input type="text" formControlName="phoneNumber" required="" class="form-control"
+                     [(ngModel)]="user.phonenumber" placeholder="Enter Phone Number">
+                  </div>
+                <div class="form-group">
+                  <label>User Name</label>
+                  <input type="text"  formControlName="userName" required="" class="form-control"
+                      [(ngModel)]="user.username"  placeholder="Enter Useer Name">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                      <input type="password" formControlName="password" required="" class="form-control"
+                       [(ngModel)]="user.passwordhash"  placeholder="Enter Password">
+                </div>
+                <div class="form-group">
+                  <label>Confirm Password</label>
+                    <input type="password" formControlName="cPassword" required="" class="form-control"
+                    (keyup)="confirmpassword($event)" 
+                   [(ngModel)]="cpass" placeholder="Enter Confirm Password">
+                  <span style="float:right" *ngIf="cpy"> <img src="assets/icon/check.png" ></span>
+                  <span style="float:right" *ngIf="cpn"> <img src="assets/icon/cross.png" ></span>
+                </div>
+                <div class="form-group" *ngIf="companies">
+                  <label>Company</label>
+                    <select name="companyID" formControlName="companyID" required="" 
+                    class="form-control" [(ngModel)]="selectedCompany"
+                      (change)="selectCompany()" >
+                      <option>Select Company</option>
+                        <option *ngFor="let company of companies">{{company.companyName}}</option>
+                     </select>
+                 </div>
+                 <div class="form-group">
+                   <label>Email</label>
+                    <input type="text" formControlName="email" required="" class="form-control" 
+                     [(ngModel)]="user.email"  placeholder="Enter Email-ID">
+                </div>
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" formControlName="firstName" required="" class="form-control"
+                  [(ngModel)]="user.firstname" placeholder="Enter First Name">
+                </div>
+                <div class="form-group">
+                  <label>Last Name</label>
+                    <input type="text" formControlName="lastName" required="" class="form-control"
+                      [(ngModel)]="user.lastname" placeholder="Enter Last Name">
+                 </div>
+                <div class="form-group">
+                  <label>Role Name</label>
+                  <select formControlName="roleName" required="" class="form-control"
+                   [(ngModel)]="selectedRole" (change)="selectRole()" >
+                  <option>Select Role</option>
+                  <option *ngFor="let role of roles">{{role.name}}</option>
+                </select>
+                </div>
+                  <div class="form-group" *ngIf="projects">
+                    <label>Project Name</label>
+                    <select formControlName="projectName" required="" class="form-control" 
+                    [(ngModel)]="selectedProject" (change)="selectProject()" >
+                    <option>Select Project</option>
+                  <option *ngFor="let project of projects">{{project.projectName}}</option>
+                  </select>
+                  </div>
+                  <button type="submit" [disabled]="false" 
+                  class="btn btn-success btn-icon" 
+                  style="margin-left: 10px;">Save</button>
+                  <button (click)="cancleuser()"  class="btn btn-success btn-icon" 
+                  style="margin-left: 10px;">Cancel</button>
+              </form>
+            
+              </div>
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- content-wrapper ends -->
+  
+</div>

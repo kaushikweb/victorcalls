@@ -1,0 +1,70 @@
+<!-- partial -->
+<div class="main-panel" >
+  
+  <div class="content-wrapper">
+    <div class="card">
+     <div class="card-body">
+        <h4 class="card-title" style="color: #fb4b1a;">Create Project</h4>
+        <div class="row">
+            <div class="col-md-5">
+                <form role="form" [formGroup]="createProjectForm" 
+                 (ngSubmit)="createProject(createProjectForm.value)">
+                    
+                 
+                 <div class="form-group">
+                    <label>Project Location</label>
+                    <input ngx-google-places-autocomplete [options]='' 
+                        #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"
+                          style="padding: 9px; " [(ngModel)]="locationName"
+                          formControlName="locationName" required="" class="form-control"/>
+                  </div>        
+                  <div class="form-group">
+                      <label>Project Name</label>
+                     <input type="text" formControlName="projectName" required=""  class="form-control"
+                      [(ngModel)]="project.projectName" style="padding: 9px;">
+                  </div>
+                  <div class="form-group">
+                  <label>Longitude</label>
+                   <input type="text" formControlName="longitude" required="" class="form-control" readonly
+                     [(ngModel)]="project.longitude" style="padding: 9px;">
+                  </div>
+                  <div class="form-group">
+                    <label>Lattitude</label>
+                      <input type="text" formControlName="latitude" required="" class="form-control" 
+                           [(ngModel)]="project.lattitude" readonly style="padding: 9px;">
+                    </div>
+                 
+                  <div class="form-group">
+                    <label>Description</label>
+                      <textarea formControlName="description" required="" class="form-control m-b" 
+                          [(ngModel)]="project.description" style="padding: 9px;">Description...
+                      </textarea>
+                  </div>
+                  <div class="form-group">
+                     <label>District</label>
+                        <input type="text" formControlName="district" 
+                          required="" class="form-control"[(ngModel)]="project.district" 
+                          style="padding: 9px;" >
+                  </div>
+                  <button class="btn" type="reset" (click)="cancelProject()" 
+                  style="background-color: #950505; color: cornsilk" >
+                    <b>Cancel</b></button>
+                   <button type="submit" [disabled]="!createProjectForm.valid" 
+                   class="btn btn-success btn-icon" style="margin-left: 10px;">
+                     Save</button>
+                          
+              </form>
+          </div>
+          <div *ngIf="project" class="col-md-5" style="margin-top: 150px;" >
+              <h1>{{locationName}}</h1>
+              <agm-map [latitude]="project.lattitude" [longitude]="project.longitude" >
+              <agm-marker [latitude]="project.lattitude" [longitude]="project.longitude"></agm-marker>
+          </agm-map>
+      </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- content-wrapper ends -->
+  
+</div>

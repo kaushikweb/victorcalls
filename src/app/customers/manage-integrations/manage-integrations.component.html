@@ -1,0 +1,52 @@
+<!-- partial -->
+<div class="main-panel">
+    <!-- <div class="my-container">
+        <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+      </div> -->
+    <div class="content-wrapper">
+      <div class="card">
+        <div class="card-body">
+          
+          <h4 class="card-title" style="color:#131e42">Manage Integration</h4>
+          
+          <button (click) = "showForm()" class="btn btn-primary" 
+            style="float:right;margin-top:-20px;"> Create Integration </button>
+             
+          <h6 style="color:tomato">CompanyId:&nbsp; {{companyId}},&nbsp;Company Name:&nbsp;{{companyName}}</h6>
+            
+          <div class="row">
+            <div class="col-12 table-responsive">
+              <table id="mydatatable" class="table table-striped">
+                <thead style="background: #87ceeb;box-shadow: 1px 1px 1px 1px #cccccc;">
+                    <tr >
+        
+                        <th >ID</th>
+                        <th >Source ID</th>
+                        <th >Source Name</th>
+                        <th >Company Id</th>
+                        <th >Key</th>
+                        <th >Value</th>
+                        
+                        
+                        </tr>
+                </thead>
+                <tbody *ngIf="integrations">
+                    <tr *ngFor="let myList of integrations; let i = index" [attr.data-index]="i" >
+                    <td >{{myList.id}}</td>
+                    <td >{{myList.sourceType.id}}</td>
+                    <td >{{myList.sourceType.name}}</td>
+                    <td >{{myList.companyId}}</td>
+                    <td >{{myList.key}}</td>
+                    <td >{{myList.value}}</td>
+                    
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- content-wrapper ends -->
+  </div>
+  
